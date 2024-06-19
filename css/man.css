@@ -21,10 +21,19 @@ body {
 
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
+
+    /*text-transform: uppercase;*/
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: 900;
 }
 
 .button {
+    margin-top: 1em;
     display: flex;
     align-items: center;
 
@@ -34,12 +43,31 @@ body {
     border-radius: .5em;
     cursor: pointer;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    transition: all 200ms ease-in;
+
+    &.checked .icon {
+        display: block;
+    }
+
+    &.succses {
+        background-color: hwb(91 21% 1%);
+
+        .icon.check {
+            background-color: hsl(91, 84%, 68%);
+        }
+    }
 
     .icon {
         font-size: 32px;
         color: var(--text-color);
         margin-right: 10px;
         display: none;
+        transition: 300ms ease;
+
+        &.spiner.spin {
+            animation: spin 1.3s cubic-bezier(.17, .67, .83, .67) infinite;
+        }
 
         &.check {
             display: inline-flex;
@@ -51,10 +79,18 @@ body {
             border-radius: 50%;
             font-size: 1.4em;
         }
+
+
     }
 
     .btn-text {
         font-size: 32px;
         font-weight: 400;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg) scale(1);
     }
 }
