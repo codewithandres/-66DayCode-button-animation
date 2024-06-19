@@ -1,0 +1,60 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+    --bg-color: hsl(220, 85%, 57%);
+    --text-color: hsl(0, 20%, 93%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+
+    padding: 20px 30px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: .5em;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+    .icon {
+        font-size: 32px;
+        color: var(--text-color);
+        margin-right: 10px;
+        display: none;
+
+        &.check {
+            display: inline-flex;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            background-color: hsl(224, 90%, 70%);
+            border-radius: 50%;
+            font-size: 1.4em;
+        }
+    }
+
+    .btn-text {
+        font-size: 32px;
+        font-weight: 400;
+    }
+}
